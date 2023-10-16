@@ -15,7 +15,7 @@ exports.mailSender = async (email,token) =>{
             from:'codeTuber - by Sudhanshu Kumar ',
             to:email,
             subject:'Reset Password Link',
-            html:`<p>Click here to reset your password: <a href='http://localhost:4000/resetPassword?token=${token}'>Reset</a></p>`,
+            html:`<p>Click here to reset your password: <a href='https://skgblog.onrender.com/resetPassword?token=${token}'>Reset</a></p>`,
         });
         console.log(send);
         return send;
