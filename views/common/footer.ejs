@@ -18,26 +18,26 @@
   </div>
   <div class="w-4/12 flex justify-center items-center">
     <ul>
-      <a href="/api/v1/">
+      <a href="/">
         <li class="mb-2 hover:text-slate-500"><i class="fa-solid fa-house mr-2"></i> Home</li>
       </a>
-      <a href="/api/v1/about">
+      <a href="/about">
         <li class="mb-2 hover:text-slate-500"><i class="fa-solid fa-address-card mr-2"></i>About</li>
       </a>
-      <a href="/api/v1/contact">
+      <a href="/contact">
         <li class="mb-2 hover:text-slate-500"><i class="fa-solid fa-phone mr-2"></i>Contact us</li>
       </a>
       <% if(locals.user){%>
-      <a href="/api/v1/dashboard">
+      <a href="/dashboard">
         <li class="mb-2">
          hover:text-slate-500  <i class="fa-solid fa-arrows-to-dot mr-2"></i>Dashboard
         </li>
       </a>
       <% }else {%>
-      <a href="/api/v1/signup">
+      <a href="/signup">
         <li class="mb-2 hover:text-slate-500"><i class="fa-solid fa-user mr-2"></i>Create Account</li>
       </a>
-      <a href="/api/v1/login">
+      <a href="/login">
         <li class="mb-2 hover:text-slate-500"><i class="fa-solid fa-right-to-bracket mr-2"></i>login</li>
       </a>
       <% } %>

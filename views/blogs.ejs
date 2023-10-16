@@ -18,7 +18,7 @@
         <h1 class="font-bold text-3xl"><%= blogs[i].title %></h1>
         <p class="my-2"><%= blogs[i].content.length > 200 ?  blogs[i].content.substring(0,200) : blogs[i].content  %>
         </p>
-        <a href="/api/v1/post/<%= blogs[i]._id %>" class="w-fit px-4 py-2 bg-blue-300 rounded-sm hover:bg-blue-500 cursor-pointer">
+        <a href="/post/<%= blogs[i]._id %>" class="w-fit px-4 py-2 bg-blue-300 rounded-sm hover:bg-blue-500 cursor-pointer">
           Read More...
         </a>
       </div>

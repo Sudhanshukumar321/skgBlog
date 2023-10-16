@@ -25,14 +25,14 @@ app.use(express.static('public'));
 // importing routes
 const adminRoutes = require('./routes/admin');
 
-app.use('/api/v1', adminRoutes);
+app.use('/', adminRoutes);
 const userRoute = require('./routes/user');
-app.use('/api/v1', userRoute);
+app.use('/', userRoute);
 const blogRoute = require('./routes/blog');
-app.use('/api/v1',blogRoute);
+app.use('/',blogRoute);
 // error page
 const { error } = require('./controllers/error');
-app.get('/api/v1/*',error);
+app.get('/*',error);
 
 
 app.listen(process.env.PORT,()=>{

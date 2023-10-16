@@ -20,15 +20,15 @@
         <p class="my-2 text-sm">
           <%= blogs[i].content.length > 30 ?  blogs[i].content.substring(0,30) : blogs[i].content  %>
         </p>
-        <a href="/api/v1/post/<%= blogs[i]._id %>" class="w-fit px-4 py-2 bg-blue-300 rounded-sm hover:bg-blue-500 cursor-pointer text-sm">
+        <a href="/post/<%= blogs[i]._id %>" class="w-fit px-4 py-2 bg-blue-300 rounded-sm hover:bg-blue-500 cursor-pointer text-sm">
           Read More...
         </a>
       </div>
       <div class="lg:w-[15%] w-[10%] flex justify-center items-center text-black">
-        <a href="/api/v1/editPost/<%= blogs[i]._id %>"><span>Edit <i class="fa-solid fa-pen-to-square text-black"></i> </span></a>
+        <a href="/editPost/<%= blogs[i]._id %>"><span>Edit <i class="fa-solid fa-pen-to-square text-black"></i> </span></a>
       </div>
       <div class=" lg:w-[15%] w-[10%] flex justify-center items-center text-black">
-        <a href="/api/v1/deletePost/<%= blogs[i]._id %>"><span>Delete  <i class="fa-solid fa-trash text-red-500"></i></span></a>
+        <a href="/deletePost/<%= blogs[i]._id %>"><span>Delete  <i class="fa-solid fa-trash text-red-500"></i></span></a>
       </div>
     </div>
     <% } }else{ %>

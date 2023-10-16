@@ -1,24 +1,24 @@
 <nav class="w-[100%] bg-black flex justify-between items-center p-4 text-white">
-  <a href="/api/v1/" class="w-2/12"><h1>Blogs</h1></a>
+  <a href="/" class="w-2/12"><h1>Blogs</h1></a>
   <ul class="w-10/12 flex justify-end lg:gap-6 mr-2 gap-2">
-    <a class="hover:text-red-500 hover:border-b-2 border-red-500" href="/api/v1/">
+    <a class="hover:text-red-500 hover:border-b-2 border-red-500" href="/">
       <li>Home</li>
     </a>
-    <a class="hover:text-red-500 hover:border-b-2 border-red-500" href="/api/v1/about">
+    <a class="hover:text-red-500 hover:border-b-2 border-red-500" href="/about">
       <li>About</li>
     </a>
-    <a class="hover:text-red-500 hover:border-b-2 border-red-500" href="/api/v1/contact">
+    <a class="hover:text-red-500 hover:border-b-2 border-red-500" href="/contact">
       <li>Contact us</li>
     </a>
     <% if(locals.user){%>
-    <a class="hover:text-red-500 hover:border-b-2 border-red-500" href="/api/v1/dashboard">
+    <a class="hover:text-red-500 hover:border-b-2 border-red-500" href="/dashboard">
       <li>Dashboard</li>
     </a>
     <% }else {%>
-    <a class="hover:text-red-500 hover:border-b-2 border-red-500" href="/api/v1/signup">
+    <a class="hover:text-red-500 hover:border-b-2 border-red-500" href="/signup">
       <li>Create Account</li>
     </a>
-    <a class="hover:text-red-500 hover:border-b-2 border-red-500" href="/api/v1/login">
+    <a class="hover:text-red-500 hover:border-b-2 border-red-500" href="/login">
       <li>login</li>
     </a>
     <% } %>

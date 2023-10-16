@@ -15,7 +15,7 @@ exports.signup = async (req, res) => {
   try {
     // const blogs = await BlogSetting.find({});
     // if(blogs.length > 0){
-    //     res.redirect('/api/v1/login');
+    //     res.redirect('/login');
     // }else{
     res.render("signup.ejs");
     // }
@@ -44,7 +44,7 @@ exports.signedup = async (req, res) => {
     });
 
     if (user) {
-      res.redirect("/api/v1/login");
+      res.redirect("/login");
     } else {
       res.render("blogSetup", { message: "Blog not setup, please try again" });
     }
@@ -128,7 +128,7 @@ exports.uploadPost = async (req, res) => {
         });
       }
     }
-    return res.redirect("/api/v1/login");
+    return res.redirect("/login");
   } catch (error) {
     console.log(`Error During ulpoading post: ${error.message}`);
   }
@@ -175,9 +175,9 @@ exports.editedPost = async (req, res) => {
         { title, content, image: image }
       );
 
-      return res.redirect(`/api/v1/post/${postId}`);
+      return res.redirect(`/post/${postId}`);
     }
-    return res.redirect("/api/v1/login");
+    return res.redirect("/login");
   } catch (error) {
     console.log(`Error During edited post: ${error.message}`);
   }
@@ -196,9 +196,9 @@ exports.deletePost = async (req, res) => {
         fs.unlinkSync(`F:/bharat-intern/Blog-management-tool/public${post.image}`);
       }
 
-      return res.redirect("/api/v1/dashboard");
+      return res.redirect("/dashboard");
     }
-    return res.redirect("/api/v1/login");
+    return res.redirect("/login");
   } catch (error) {
     console.log(`Error During showing edit post view: ${error.message}`);
   }
@@ -211,7 +211,7 @@ exports.changeProfileImage = async(req,res) =>{
       if(userId){
          return res.render('changeProfileImage');
       }
-      return res.redirect('/api/v1/login');
+      return res.redirect('/login');
   } catch (error) {
       console.log('Error During changeProfileImage view: ',error.message);
   }
@@ -227,9 +227,9 @@ exports.changedProfileImage = async(req,res) =>{
        const user = await User.findById(userId);
         await User.findByIdAndUpdate({_id:userId},{profileImage: `/images/${profileImage}`})
          fs.unlinkSync(`F:/bharat-intern/Blog-management-tool/public${user.profileImage}`);
-         return res.redirect('/api/v1/profile');
+         return res.redirect('/profile');
       }
-      return res.redirect('/api/v1/login');
+      return res.redirect('/login');
 
   } catch (error) {
       console.log('Error During changed Profile Image: ',error.message);

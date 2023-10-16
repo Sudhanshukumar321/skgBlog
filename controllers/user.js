@@ -31,9 +31,9 @@ exports.loggedIn = async(req,res) =>{
                 req.session.isAdmin = user.isAdmin;
                 // checking user is admin or not
                 if(user.isAdmin == 1){
-                   return res.redirect('/api/v1/dashboard');
+                   return res.redirect('/dashboard');
                 }else{
-                   return res.redirect('/api/v1/profile');
+                   return res.redirect('/profile');
                 }
             }else{
                 res.render('login',{message: 'Email and Password is incorrect'});
@@ -53,7 +53,7 @@ exports.logout = async(req,res) =>{
     try {
         
         req.session.destroy();
-        res.redirect('/api/v1/login');
+        res.redirect('/login');
 
     } catch (error) {
         console.log(`Error During Logout: ${error.message}`);
@@ -113,7 +113,7 @@ exports.resetPasswordSuccessfull = async(req,res) =>{
         const encryptedpassword = await bcrypt.hash(password,10);
         const result = await User.findOneAndUpdate({token},{password:encryptedpassword,token:''});
 
-        return res.redirect('/api/v1/login');
+        return res.redirect('/login');
         
     } catch (error) {
         console.log('Error During reseting password: ',error.message);
@@ -129,7 +129,7 @@ exports.editProfile = async(req,res) =>{
             const user = await User.findById(userId);
            return res.render('editProfile',{user: user});
         }
-        return res.redirect('/api/v1/login');
+        return res.redirect('/login');
     } catch (error) {
         console.log('Error During Profile editing view: ',error.message);
     }
@@ -142,9 +142,9 @@ exports.editedProfile = async(req,res) =>{
         const userId = req.session.userId;
         if(userId){
             const updatedUser = await User.findByIdAndUpdate({_id:userId},{name,about});
-           res.redirect('/api/v1/profile');
+           res.redirect('/profile');
         }
-        res.redirect('/api/v1/login');
+        res.redirect('/login');
 
     } catch (error) {
         console.log('Error During Profile editing: ',error.message);

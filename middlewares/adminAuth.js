@@ -3,7 +3,7 @@ exports.isLogin = async(req,res,next) =>{
         if(req.session.userId && req.session.isAdmin == 1){
 
         }else{
-           return res.redirect('/api/v1/login');
+           return res.redirect('/login');
         }
         next();
 
@@ -15,7 +15,7 @@ exports.isLogin = async(req,res,next) =>{
 exports.isLogout = async(req,res,next) =>{
     try{
         if(req.session.userId && req.session.isAdmin == 1){
-           return res.redirect('/api/v1/dashboard');   
+           return res.redirect('/dashboard');   
         }
         next();
 
