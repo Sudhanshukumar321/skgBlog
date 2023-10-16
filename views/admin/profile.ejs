@@ -1,0 +1,28 @@
+<%- include('../layouts/header.ejs') %>
+
+<div class="w-[100%] h-[100vh] flex">
+  <%- include('./sidebar.ejs') %>
+
+  <div class="m-10 w-7/12 ">
+    <h1 class="text-3xl font-bold">My Profile</h1>
+    <div class="w-[100%] h-1 bg-black mt-2"></div>
+    <div>
+      <div class="mb-4 text-yellow-500">
+        <h1 class="text-2xl font-bold"><%= user.name %></h1>
+       <p class="italic text-slate-500 mb-2"><%= user.about %></p>
+       <p class="text-slate-500">Blog Type | <span class="font-bold text-black"><%= user.blogType %></span></p>
+      </div>
+      <div>
+        <p class="text-slate-500">Name: <span class="ml-10 font-bold text-black"><%= user.name %></span></p>
+        <p class="text-slate-500">About: <span class="ml-10 font-bold text-black"><%= user.about %></span></p>
+        <p class="text-slate-500">Email: <span class="ml-10 font-bold text-black"><%= user.email %></span></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="w-2/12 h-fit flex justify-center m-10 mt-[10rem] items-center ">
+    <a href="/api/v1/editProfile" class="w-fit bg-red-300 p-2 rounded-lg hover:bg-red-500 hover:text-white">Edit <i class="fa-solid fa-pen-to-square "></i></a>
+  </div>
+</div>
+
+<%- include('../layouts/footer.ejs') %>

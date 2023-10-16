@@ -1,0 +1,59 @@
+<%- include('./layouts/header.ejs') %>
+
+<div class="w-[100%] h-[100vh] flex flex-col justify-between items-center">
+  <!-- navbar -->
+<%- include('./common/header.ejs') %>
+
+<div class="w-[100%]  lg:flex justify-center items-center my-8">
+  <div class="flex justify-center flex-col lg:gap-y-4 gap-y-8 lg:w-[60%] w-[100%] shadow-2xl lg:p-10 p-20 lg:pt-0 pt-10 bg-slate-200 rounded-lg">
+    <div class="text-center w-[100%] border-b-2 border-black pb-2 mb-4">
+      <h1 class="font-bold text-3xl mb-2 drop-shadow-2xl">Login</h1>
+      <p>Welcome Back</p>
+
+      <% if(typeof message !== 'undefined') {%>
+        <p class="text-red-600"><%= message %></p>
+        <% } %>
+
+    </div>
+
+    <form action="" method="post" class="flex justify-center flex-col gap-y-4">
+      <div class="w-[100%]">
+        <label for="email">Email<sup class="text-red-500">*</sup></label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Enter Your Email"
+          class="w-[100%] outline-none border-[1px] border-slate-500 p-1"
+          required
+        />
+      </div>
+      <div>
+        <label for="password">Password<sup class="text-red-500">*</sup></label>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Enter Your Password"
+          class="w-[100%] outline-none border-[1px] border-slate-500 p-1"
+          required
+        />
+        <a href="/api/v1/forgetPassword" class="text-blue-800 float-right italic hover:text-red-500">Forget Password</a>
+      </div>
+      <div>
+        <input
+          type="submit"
+          value="Login"
+          class="w-[100%] outline-none border-none bg-red-500 px-4 py-2 rounded-[5px] cursor-pointer text-white hover:bg-red-800"
+        />
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- footer -->
+<%- include('./common/footer.ejs') %>
+</div>
+
+
+<%- include('./layouts/footer.ejs') %>

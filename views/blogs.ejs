@@ -1,0 +1,34 @@
+<%- include('./layouts/header.ejs') %>
+
+<div
+  class="w-[100%] text-white h-[100vh] flex justify-between items-center flex-col"
+>
+  <%- include('./common/header.ejs') %>
+
+  <div
+    class="w-[100%] flex flex-col justify-center items-center text-black p-6"
+  >
+  <!-- loop to aceess all posts -->
+    <% if(blogs.length > 0){ for(let i=0; i < blogs.length; i++){ %>
+    <div class="w-[80%] flex justify-between items-center gap-20 mb-6">
+      <div class="w-1/2">
+        <img src="<%= blogs[i].image %>" alt="image" class="max-h-[200px] w-[100%]" />
+      </div>
+      <div class="w-1/2">
+        <h1 class="font-bold text-3xl"><%= blogs[i].title %></h1>
+        <p class="my-2"><%= blogs[i].content.length > 200 ?  blogs[i].content.substring(0,200) : blogs[i].content  %>
+        </p>
+        <a href="/api/v1/post/<%= blogs[i]._id %>" class="w-fit px-4 py-2 bg-blue-300 rounded-sm hover:bg-blue-500 cursor-pointer">
+          Read More...
+        </a>
+      </div>
+    </div>
+    <% } }else{ %>
+    <h1 class="text-black font-bold text-3xl text-center">No Blogs Found</h1>
+    <% } %>
+  </div>
+  <%- include('./common/footer.ejs') %>
+
+</div>
+
+<%- include('./layouts/footer.ejs') %>

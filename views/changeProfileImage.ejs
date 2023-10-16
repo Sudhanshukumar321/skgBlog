@@ -1,0 +1,29 @@
+<%- include('layouts/header.ejs') %>
+
+<div class="w-[100%] h-[100vh] flex justify-center items-center">
+  <div class=" flex justify-center items-center gap-6 flex-col p-2 rounded-sm p-4 border-2 border-black">
+    <div>
+      <h1 class="font-bold text-3xl">Change Your Profile Picture</h1>
+    </div>
+        <div>
+            <p class="text-red-500"> <%= locals.message %> </p>
+        </div>
+
+    <form method="post" enctype="multipart/form-data">
+      <input
+        type="file"
+        name="profileImage"
+        id="profileImage"
+        required
+        class="outline-none p-2 border-2 border-slate-500"
+      />
+      <input
+        type="submit"
+        value="Change"
+        class="p-2 py-3 bg-green-500 rounded-sm border-none outline-none cursor-pointer"
+      />
+    </form>
+  </div>
+</div>
+
+<%-include('layouts/footer.ejs') %>

@@ -1,0 +1,46 @@
+<footer
+  class="w-[100%] h-[40vh] bg-black text-white flex items-center justify-between p-6 md:h-auto"
+>
+  <div class="w-4/12 flex justify-center items-center text-2xl">
+    <ul class="flex justify-center items-center gap-4 w-[100%] lg:flex-nowrap flex-wrap md:gap-6">
+      <li><a href="https://instagram.com/sudhanshukush321?igshid=ZDc4ODBmNjlmNQ==" class="hover:bg-black hover:text-white-300  bg-white px-2 py-1 text-red-500 rounded-[50%] "><i class="fa-brands fa-square-instagram"></i></a></li>
+      <li><a href="https://www.facebook.com/sudhanshukush321" class="hover:bg-black hover:text-white-300  bg-white px-2 py-1 text-red-500 rounded-[50%] "><i class="fa-brands fa-square-facebook"></i></a></li>
+      <li><a href="https://github.com/Sudhanshukumar321" class="hover:bg-black hover:text-white-300  bg-white px-2 py-1 text-red-500 rounded-[50%] "><i class="fa-brands fa-square-github"></i></a></li>
+      <li><a href="mailto:sudhanshukush321@gmail.com" class="hover:bg-black hover:text-white-300  bg-white px-2 py-1 text-red-500 rounded-[50%] "><i class="fa-solid fa-square-envelope"></i></a></li>
+      <li><a href="#" class="hover:bg-black hover:text-white-300  bg-white px-2 py-1 text-red-500 rounded-[50%] "><i class="fa-brands fa-square-youtube"></i></a></li>
+      <li><a href="https://www.linkedin.com/in/sudhanshu-kumar-7a6102214" class="hover:bg-black hover:text-white-300  bg-white px-2 py-1 text-red-500 rounded-[50%] "><i class="fa-brands fa-linkedin"></i></a></li>
+    </ul>
+  </div>
+  <div
+    class="w-4/12 h-[100%] flex justify-center items-end sm:items-center border-x-2 border-white md:mx-8"
+  >
+    <p>@Copyright (Sudhanshu Kumar)</p>
+  </div>
+  <div class="w-4/12 flex justify-center items-center">
+    <ul>
+      <a href="/api/v1/">
+        <li class="mb-2 hover:text-slate-500"><i class="fa-solid fa-house mr-2"></i> Home</li>
+      </a>
+      <a href="/api/v1/about">
+        <li class="mb-2 hover:text-slate-500"><i class="fa-solid fa-address-card mr-2"></i>About</li>
+      </a>
+      <a href="/api/v1/contact">
+        <li class="mb-2 hover:text-slate-500"><i class="fa-solid fa-phone mr-2"></i>Contact us</li>
+      </a>
+      <% if(locals.user){%>
+      <a href="/api/v1/dashboard">
+        <li class="mb-2">
+         hover:text-slate-500  <i class="fa-solid fa-arrows-to-dot mr-2"></i>Dashboard
+        </li>
+      </a>
+      <% }else {%>
+      <a href="/api/v1/signup">
+        <li class="mb-2 hover:text-slate-500"><i class="fa-solid fa-user mr-2"></i>Create Account</li>
+      </a>
+      <a href="/api/v1/login">
+        <li class="mb-2 hover:text-slate-500"><i class="fa-solid fa-right-to-bracket mr-2"></i>login</li>
+      </a>
+      <% } %>
+    </ul>
+  </div>
+</footer>

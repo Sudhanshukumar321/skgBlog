@@ -1,0 +1,58 @@
+<%- include('./layouts/header.ejs') %>
+
+    <div class="w-[100%] flex justify-center items-center h-[100vh]">
+        <div class=" flex flex-col w-auto p-6 bg-red-200">
+            <div class="text-center w-[100%] border-b-2 border-black pb-2 mb-4">
+              <h1 class="font-bold text-3xl mb-2 drop-shadow-2xl">Edit post</h1>
+        
+              <% if(typeof message !== 'undefined') {%>
+              <p class="text-green-600"><%= message %></p>
+              <% } %>
+            </div>
+         
+            <form method="post" enctype="multipart/form-data" class=" flex justify-center flex-col gap-y-4" >
+              <div class="w-[100%]">
+                <label for="title">Title<sup class="text-red-500">*</sup></label>
+                <input
+                  type="text"
+                  name="title"
+                  id="title"
+                  value="<%= post.title %>"
+                  placeholder="Enter Your Title"
+                  class="w-[100%] outline-none border-[1px] border-slate-500 p-1"
+                />
+              </div>
+              <div class="w-[100%]">
+                <label for="image">Image</label>
+                <input
+                  type="file"
+                  name="image"
+                  id="image"
+                  class="w-[100%] outline-none border-[1px] border-slate-500 p-1"
+                />
+                <img src="<%= post.image %>" alt="" class="w-[75px] h-[75px]">
+              </div>
+              <div>
+                <label for="content">Descripton<sup class="text-red-500">*</sup></label>
+                <textarea
+                  type="text"
+                  name="content"
+                  rows="5"
+                  id="content"
+                  placeholder="Enter Your Content"
+                  class="w-[100%] outline-none border-[1px] border-slate-500 p-1"
+                ><%= post.content %></textarea>
+              </div>
+              <div>
+                <input
+                  type="submit"
+                  value="Update"
+                  class="w-[100%] outline-none border-none bg-red-500 px-4 py-2 rounded-[5px] cursor-pointer text-white hover:bg-red-800"
+                />
+              </div>
+              </div>
+            </form>
+          </div>
+    </div>
+
+<%- include('./layouts/footer.ejs') %>

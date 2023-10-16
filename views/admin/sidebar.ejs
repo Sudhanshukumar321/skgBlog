@@ -1,0 +1,21 @@
+<div class="bg-black text-white font-bold lg:w-3/12 w-1/4 h-[100%]">
+        <a href="/api/v1/changeProfileImage">
+            <div class="w-[80px] h-[80px] bg-red-300 rounded-[50%] mt-6 ml-6 relative group">
+                <img src="<%= user.profileImage %>" alt="profile" class="w-fit rounded-[50%] w-[80px] h-[80px]">
+                <div class="invisible group-hover:visible cursor-pointer absolute top-0 left-0 rounded-[50%] w-[80px] h-[80px] bg-slate-100 opacity-60 flex justify-center items-center">
+                    <span class="text-black"><i class="fa-solid fa-camera"></i></span>
+                </div>
+            </div> 
+        </a>
+        
+    
+    <div class=" flex items-center flex-col  ">
+        <ul class="flex items-start flex-col  w-[100%] mt-6">
+            <li class="p-2 pl-8 w-[100%] hover:bg-red-300"><a href="/api/v1/dashboard"><i class="fa-solid fa-arrows-to-dot mr-2"></i> Dashboard</a></li>
+            <li class="p-2 pl-8 w-[100%] hover:bg-red-300"><a href="/api/v1/profile"><i class="fa-solid fa-user mr-2"></i> My Profile</a></li>
+            <li class="p-2 pl-8 w-[100%] hover:bg-red-300"><a href="/api/v1/createPost"><i class="fa-solid fa-plus mr-2"></i> Create Post</a></li>
+            <li class="p-2 pl-8 w-[100%] hover:bg-red-300"><a href="/api/v1/"><i class="fa-solid fa-house mr-2"></i> Home</a></li>
+            <li class="p-2 pl-8 w-[100%] hover:bg-red-300"><a href="/api/v1/logout"><i class="fa-solid fa-right-from-bracket mr-2"></i> LogOut</a></li>
+        </ul>
+    </div>
+</div>
