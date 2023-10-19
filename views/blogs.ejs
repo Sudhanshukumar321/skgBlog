@@ -10,13 +10,13 @@
   >
   <!-- loop to aceess all posts -->
     <% if(blogs.length > 0){ for(let i=0; i < blogs.length; i++){ %>
-    <div class="w-[80%] flex justify-between items-center gap-20 mb-6">
-      <div class="w-1/2">
+    <div class="lg:w-[80%] w-[100%] lg:flex justify-between items-center gap-20 lg:mb-6 mb-10">
+      <div class="lg:w-1/2">
         <img src="<%= blogs[i].image %>" alt="image" class="max-h-[300px] w-[100%]" />
       </div>
-      <div class="w-1/2">
+      <div class="lg:w-1/2">
         <h1 class="font-bold text-3xl"><%= blogs[i].title %></h1>
-        <p class="my-2"><%= blogs[i].content.length > 200 ?  blogs[i].content.substring(0,200) : blogs[i].content  %>
+        <p class="my-2"><%= blogs[i].content.length > 300 ?  blogs[i].content.substring(0,300) : blogs[i].content  %>
         </p>
         <a href="/post/<%= blogs[i]._id %>" class="w-fit px-4 py-2 bg-blue-300 rounded-sm hover:bg-blue-500 cursor-pointer">
           Read More...

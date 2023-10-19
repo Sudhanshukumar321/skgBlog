@@ -3,6 +3,7 @@
 <div class="w-[100%] h-[100vh] flex">
   <%- include('./sidebar.ejs') %>
 
+ <div class="lg:flex justify-between w-[100%]">
   <div class="m-10 w-7/12 ">
     <h1 class="text-3xl font-bold">My Profile</h1>
     <div class="w-[100%] h-1 bg-black mt-2"></div>
@@ -13,16 +14,17 @@
        <p class="text-slate-500">Blog Type | <span class="font-bold text-black"><%= user.blogType %></span></p>
       </div>
       <div>
-        <p class="text-slate-500">Name: <span class="ml-10 font-bold text-black"><%= user.name %></span></p>
-        <p class="text-slate-500">About: <span class="ml-10 font-bold text-black"><%= user.about %></span></p>
-        <p class="text-slate-500">Email: <span class="ml-10 font-bold text-black"><%= user.email %></span></p>
+        <p class="text-slate-500">Name: <span class="lg:ml-10 ml-2 font-bold text-black"><%= user.name %></span></p>
+        <p class="text-slate-500">About: <span class="lg:ml-10 ml-2 font-bold text-black"><%= user.about %></span></p>
+        <p class="text-slate-500">Email: <span class="lg:ml-10 ml-2 font-bold text-black"><%= user.email %></span></p>
       </div>
     </div>
   </div>
 
-  <div class="w-2/12 h-fit flex justify-center m-10 mt-[10rem] items-center ">
+  <div class="w-2/12 h-fit flex justify-center lg:m-10 lg:mt-[10rem] float-right items-center ">
     <a href="/editProfile" class="w-fit bg-red-300 p-2 rounded-lg hover:bg-red-500 hover:text-white">Edit <i class="fa-solid fa-pen-to-square "></i></a>
   </div>
+ </div>
 </div>
 
 <%- include('../layouts/footer.ejs') %>
