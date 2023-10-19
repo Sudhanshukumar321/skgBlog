@@ -2,6 +2,7 @@ const bcrypt = require("bcrypt");
 const User = require("../models/User");
 const Post = require("../models/Post");
 const fs = require("fs");
+const path = require("path");
 
 const passwordEncryption = async (password) => {
   try {
@@ -163,7 +164,8 @@ exports.editedPost = async (req, res) => {
         newImage = req.file.filename;
         image = `/images/${newImage}`;
         if(oldImage != ''){
-          fs.unlinkSync(`F:/bharat-intern/Blog-management-tool/public${oldImage}`);
+          // fs.unlinkSync(`F:/bharat-intern/Blog-management-tool/public${oldImage}`);
+          fs.unlinkSync(path.join(__dirname,'..','public',oldImage));
         }
       }else{
         image = oldImage;
@@ -193,7 +195,8 @@ exports.deletePost = async (req, res) => {
       console.log('post',post);
       await Post.findByIdAndDelete(postId);
       if(post.image != ''){
-        fs.unlinkSync(`F:/bharat-intern/Blog-management-tool/public${post.image}`);
+        // fs.unlinkSync(`F:/bharat-intern/Blog-management-tool/public${post.image}`);
+        fs.unlinkSync(path.join(__dirname,'..','public',post.image));
       }
 
       return res.redirect("/dashboard");
@@ -225,8 +228,9 @@ exports.changedProfileImage = async(req,res) =>{
       const userId = req.session.userId;
       if(userId){
        const user = await User.findById(userId);
+
         await User.findByIdAndUpdate({_id:userId},{profileImage: `/images/${profileImage}`})
-         fs.unlinkSync(`F:/bharat-intern/Blog-management-tool/public${user.profileImage}`);
+         fs.unlinkSync(path.join(__dirname,'..','public',user.profileImage));
          return res.redirect('/profile');
       }
       return res.redirect('/login');
