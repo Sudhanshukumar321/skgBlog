@@ -1,26 +1,87 @@
-<nav class="w-[100%] lg:h-[10vh] bg-black flex justify-between items-center p-4 text-white lg:text-xl">
-  <a href="/" class="w-2/12"><h1>Blogs</h1></a>
-  <ul class="w-10/12 flex justify-end lg:gap-6 mr-2 gap-2">
-    <a class="hover:text-red-500 hover:border-b-2 border-red-500" href="/">
-      <li>Home</li>
-    </a>
-    <a class="hover:text-red-500 hover:border-b-2 border-red-500" href="/about">
-      <li>About</li>
-    </a>
-    <a class="hover:text-red-500 hover:border-b-2 border-red-500" href="/contact">
-      <li>Contact us</li>
-    </a>
-    <% if(locals.user){%>
-    <a class="hover:text-red-500 hover:border-b-2 border-red-500" href="/dashboard">
-      <li>Dashboard</li>
-    </a>
-    <% }else {%>
-    <a class="hover:text-red-500 hover:border-b-2 border-red-500" href="/signup">
-      <li>Create Account</li>
-    </a>
-    <a class="hover:text-red-500 hover:border-b-2 border-red-500" href="/login">
-      <li>login</li>
-    </a>
-    <% } %>
-  </ul>
-</nav>
+<div
+  class="bg-black text-white w-full min-h-[10vh] px-6 py-2 flex justify-between items-center text-xl font-bold"
+>
+  <div class="font-extrabold">
+    <a href="/"><h1>Blogs</h1></a>
+  </div>
+  <nav
+    class="py-4 z-[9999] nav-links hidden md:static absolute md:flex w-full md:min-h-[10vh] min-h-[40vh] left-0 top-[10vh] flex items-center bg-black text-white"
+  >
+    <ul
+      class="w-full flex md:flex-row flex-col items-center justify-end gap-6"
+    >
+      <a class="hover:text-red-500 hover:border-b-2 border-red-500" href="/">
+        <li>Home</li>
+      </a>
+      <a
+        class="hover:text-red-500 hover:border-b-2 border-red-500"
+        href="/about"
+      >
+        <li>About</li>
+      </a>
+      <a
+        class="hover:text-red-500 hover:border-b-2 border-red-500"
+        href="/contact"
+      >
+        <li>Contact us</li>
+      </a>
+      <% if(locals.user){%>
+      <a
+        class="hover:text-red-500 hover:border-b-2 border-red-500"
+        href="/dashboard"
+      >
+        <li>Dashboard</li>
+      </a>
+      <% }else {%>
+      <a
+        class="hover:text-red-500 hover:border-b-2 border-red-500"
+        href="/signup"
+      >
+        <li>Create Account</li>
+      </a>
+      <a
+        class="hover:text-red-500 hover:border-b-2 border-red-500"
+        href="/login"
+      >
+        <li>login</li>
+      </a>
+      <% } %>
+    </ul>
+  </nav>
+  <!-- <div class="flex justify-center align-center cursor-pointer md:hidden">
+    <i class="fas fa-bars" onclick="toggleNav()"></i>
+  </div> -->
+  <div
+    class="burger md:hidden cursor-pointer text-white text-xl"
+    onclick="toggleNav()"
+  >
+    &#9776;
+  </div>
+</div>
+
+<!-- <header class="bg-gray-800 p-4">
+  <nav class="container mx-auto flex items-center justify-between">
+    <div class="text-white text-lg font-semibold">Your Logo</div>
+    <ul class="nav-links hidden md:flex space-x-4">
+      <li><a href="#" class="text-white">Home</a></li>
+      <li><a href="#" class="text-white">About</a></li>
+      <li><a href="#" class="text-white">Services</a></li>
+      <li><a href="#" class="text-white">Contact</a></li>
+    </ul>
+    <div class="burger md:hidden cursor-pointer text-white text-xl" onclick="toggleNav()">&#9776;</div>
+  </nav>
+</header> -->
+
+<script>
+  function toggleNav() {
+    const navLinks = document.querySelector('.nav-links');
+    if (navLinks.classList.contains('hidden')) {
+      navLinks.classList.remove('hidden');
+      // navLinks.classList.add('md:flex');
+    } else {
+      navLinks.classList.add('hidden');
+      // navLinks.classList.remove('md:flex');
+    }
+  }
+</script>
+
