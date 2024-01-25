@@ -1,34 +1,36 @@
 <%- include('../layouts/header.ejs') %>
 
-<div class="w-[100%] h-[100vh] flex">
+<div class="w-[100%] min-h-[100vh] flex">
   <%- include('./sidebar.ejs') %>
 
-  <div class="lg:m-10 m-4 w-3/4 lg:w-[100%]">
-    <h1 class="text-3xl font-bold">My Blogs</h1>
+  <div class="lg:m-10 m-4 w-[100%]">
+    <h1 class="text-3xl font-bold md:mt-0 mt-[2.5vh]">My Blogs</h1>
     <div class="w-[100%] h-1 bg-black mt-2"></div>
     <div
     class="w-[100%] flex flex-col justify-center items-center text-black lg:p-6 mt-2"
   >
   <!-- loop to aceess all posts -->
     <% if(blogs?.length > 0){ for(let i=0; i < blogs.length; i++){ %>
-    <div class="w-[100%] flex justify-between items-center gap-10 mb-6 ">
-      <div class="lg:w-[35%] w-[40%] bg-blue-300">
-        <img src="<%= blogs[i].image %>" alt="image" class="lg:h-[150px] w-[100%]" />
+    <div class="w-[100%] flex justify-between items-center md:flex-row flex-col gap-2 md:gap-10 mb-6 p-4 hover:shadow-2xl">
+      <div class="lg:w-[35%] md:w-[40%] w-full bg-blue-300">
+        <img src="<%= blogs[i].image %>" alt="image" class="lg:h-[200px] w-[100%]" />
       </div>
-      <div class="lg:w-[35%] w-[40%] ">
+      <div class="lg:w-[35%] md:w-[40%] w-full ">
         <h1 class="font-bold lg:text-3xl text-2xl"><%= blogs[i].title %></h1>
         <p class="my-2 text-sm">
-          <%= blogs[i].content.length > 30 ?  blogs[i].content.substring(0,30) : blogs[i].content  %>
+          <%= blogs[i].content.length > 50 ?  blogs[i].content.substring(0,50)+"..." : blogs[i].content  %>
         </p>
         <a href="/post/<%= blogs[i]._id %>" class="w-fit px-4 py-2 bg-blue-300 rounded-sm hover:bg-blue-500 cursor-pointer text-sm">
           Read More...
         </a>
       </div>
-      <div class="lg:w-[15%] w-[10%] flex justify-center items-center text-black">
-        <a href="/editPost/<%= blogs[i]._id %>"><span>Edit <i class="fa-solid fa-pen-to-square text-black"></i> </span></a>
-      </div>
-      <div class=" lg:w-[15%] w-[10%] flex justify-center items-center text-black">
-        <a href="/deletePost/<%= blogs[i]._id %>"><span>Delete  <i class="fa-solid fa-trash text-red-500"></i></span></a>
+      <div class="lg:w-[30%] w-[100%] flex justify-between items-center md:mt-0 mt-2">
+        <div class="md:w-[30%] w-[20%] hover:bg-red-500 hover:text-white hover:py-2 rounded-lg flex  items-center text-black">
+          <a href="/editPost/<%= blogs[i]._id %>"><span>Edit <i class="fa-solid fa-pen-to-square text-black hover:text-white"></i> </span></a>
+        </div>
+        <div class=" md:w-[30%] w-[20%] hover:bg-red-800 hover:text-white hover:py-2 rounded-lg flex  items-center text-black">
+          <a href="/deletePost/<%= blogs[i]._id %>"><span>Delete  <i class="fa-solid fa-trash text-black hover:text-white"></i></span></a>
+        </div>
       </div>
     </div>
     <% } }else{ %>
