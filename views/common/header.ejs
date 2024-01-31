@@ -11,7 +11,7 @@
       class="w-full flex md:flex-row flex-col items-center justify-end gap-6"
     >
       <a class="hover:text-red-500 hover:border-b-2 border-red-500" href="/">
-        <li>Home</li>
+         <li>Home</li>
       </a>
       <a
         class="hover:text-red-500 hover:border-b-2 border-red-500"
@@ -48,9 +48,6 @@
       <% } %>
     </ul>
   </nav>
-  <!-- <div class="flex justify-center align-center cursor-pointer md:hidden">
-    <i class="fas fa-bars" onclick="toggleNav()"></i>
-  </div> -->
   <div
     class="burger md:hidden cursor-pointer text-white text-xl"
     onclick="toggleNav()"
@@ -59,29 +56,17 @@
   </div>
 </div>
 
-<!-- <header class="bg-gray-800 p-4">
-  <nav class="container mx-auto flex items-center justify-between">
-    <div class="text-white text-lg font-semibold">Your Logo</div>
-    <ul class="nav-links hidden md:flex space-x-4">
-      <li><a href="#" class="text-white">Home</a></li>
-      <li><a href="#" class="text-white">About</a></li>
-      <li><a href="#" class="text-white">Services</a></li>
-      <li><a href="#" class="text-white">Contact</a></li>
-    </ul>
-    <div class="burger md:hidden cursor-pointer text-white text-xl" onclick="toggleNav()">&#9776;</div>
-  </nav>
-</header> -->
 
 <script>
-  function toggleNav() {
+   function toggleNav() {
     const navLinks = document.querySelector('.nav-links');
+    const burger = document.querySelector('.burger');
     if (navLinks.classList.contains('hidden')) {
       navLinks.classList.remove('hidden');
-      // navLinks.classList.add('md:flex');
+      burger.innerHTML = "&#9587;";
     } else {
       navLinks.classList.add('hidden');
-      // navLinks.classList.remove('md:flex');
+      burger.innerHTML = "&#9776;";
     }
   }
 </script>
-
