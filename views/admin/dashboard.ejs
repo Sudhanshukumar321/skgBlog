@@ -18,7 +18,7 @@
       <div class="lg:w-[35%] md:w-[40%] w-full ">
         <h1 class="font-bold lg:text-3xl text-2xl"><%= blogs[i].title %></h1>
         <p class="my-2 text-sm">
-          <%= blogs[i].content.length > 50 ?  blogs[i].content.substring(0,50)+"..." : blogs[i].content  %>
+          <%- blogs[i].content.length > 50 ?  blogs[i].content.substring(0,50)+"..." : blogs[i].content  %>
         </p>
         <a href="/post/<%= blogs[i]._id %>" class="w-fit px-4 py-2 bg-blue-300 rounded-sm hover:bg-blue-500 cursor-pointer text-sm">
           Read More...
