@@ -164,7 +164,9 @@ exports.editedPost = async (req, res) => {
         newImage = req.file.filename;
         
         if(oldImage != ''){
-          fs.unlinkSync(path.join(__dirname,'..','public',oldImage));
+          if(oldImage != newImage){
+            fs.unlinkSync(path.join(__dirname,'..','public',oldImage));
+          }
         }
         image = `/images/${newImage}`; 
       }else{
