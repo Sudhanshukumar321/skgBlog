@@ -158,15 +158,16 @@ exports.editedPost = async (req, res) => {
       const postId = req.params.id;
       // fetching old post data for deleting old image only
       const oldPost = await Post.findById(postId);
-      const oldImage = oldPost.image;
+      const oldImage = oldPost?.image;
 
       if(req.file){
         newImage = req.file.filename;
         
         if(oldImage != ''){
           fs.unlinkSync(path.join(__dirname,'..','public',oldImage));
-          image = `/images/${newImage}`; 
         }
+        image = `/images/${newImage}`; 
+        return;
       }else{
         image = oldImage;
       }
