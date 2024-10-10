@@ -167,12 +167,9 @@ exports.editedPost = async (req, res) => {
           fs.unlinkSync(path.join(__dirname,'..','public',oldImage));
         }
         image = `/images/${newImage}`; 
-        return;
       }else{
         image = oldImage;
       }
-      
-      
       const post = await Post.findByIdAndUpdate(
         { _id: postId },
         { title, content, image: image }
