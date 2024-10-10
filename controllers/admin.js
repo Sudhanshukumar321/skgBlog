@@ -162,10 +162,11 @@ exports.editedPost = async (req, res) => {
 
       if(req.file){
         newImage = req.file.filename;
-        image = `/images/${newImage}`;
+        
         if(oldImage != ''){
           // fs.unlinkSync(`F:/bharat-intern/Blog-management-tool/public${oldImage}`);
           fs.unlinkSync(path.join(__dirname,'..','public',oldImage));
+          image = `/images/${newImage}`;
         }
       }else{
         image = oldImage;
